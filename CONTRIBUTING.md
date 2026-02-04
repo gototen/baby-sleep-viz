@@ -15,6 +15,11 @@ Thank you for your interest in contributing! This document provides guidelines f
    pip install -e ".[dev]"
    ```
 
+4. Set up pre-commit hooks (runs linting automatically before each commit):
+   ```bash
+   pre-commit install
+   ```
+
 ## Development Workflow
 
 ### Running Tests
@@ -25,7 +30,7 @@ pytest tests/ -v
 
 ### Code Style
 
-We use `ruff` for linting and formatting:
+We use `ruff` for linting and formatting. Pre-commit hooks handle this automatically, but you can also run manually:
 
 ```bash
 # Check for issues
@@ -38,12 +43,14 @@ ruff check --fix src/ tests/
 ruff format src/ tests/
 ```
 
-### Pre-commit Checks
+### Pre-commit Hooks
 
-Before committing, ensure:
-1. All tests pass
-2. Code is formatted with ruff
-3. No linting errors
+If you installed pre-commit hooks (step 4 above), linting runs automatically on every commit. If there are issues, the commit will fail and the files will be auto-fixed — just `git add` and commit again.
+
+To run all hooks manually:
+```bash
+pre-commit run --all-files
+```
 
 ## Adding Support for New Baby Tracking Apps
 
