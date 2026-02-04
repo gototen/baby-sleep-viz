@@ -7,12 +7,12 @@ and others) into beautiful heatmap visualizations showing sleep, feeding, and me
 
 __version__ = "0.1.0"
 
-from .parse_data import parse_data, get_day_boundary, get_minute_of_day
+from .parse_data import get_day_boundary, get_minute_of_day, parse_data
 from .visualize import create_visualization
 
 __all__ = [
     "parse_data",
-    "create_visualization", 
+    "create_visualization",
     "get_day_boundary",
     "get_minute_of_day",
 ]

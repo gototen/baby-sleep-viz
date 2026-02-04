@@ -1,5 +1,7 @@
 # BabySleepViz
 
+[![Tests](https://github.com/gototen/baby-sleep-viz/actions/workflows/test.yml/badge.svg)](https://github.com/gototen/baby-sleep-viz/actions/workflows/test.yml)
+
 Visualize baby sleep, feeding, and medication patterns from tracking app exports.
 
 Transform your baby tracking app data into beautiful heatmap visualizations that reveal sleep patterns, feeding schedules, and medication timing over weeks or months.
