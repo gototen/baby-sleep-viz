@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "babysleepviz"
+version = "0.1.0"
+description = "Visualize baby sleep, feeding, and medication patterns from tracking app exports"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "BabySleepViz Contributors"}
+]
+keywords = ["baby", "sleep", "visualization", "heatmap", "parenting", "tracking", "infant"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+babysleepviz = "babysleepviz.cli:main_cli"
+babysleepviz-parse = "babysleepviz.cli:parse_cli"
+babysleepviz-render = "babysleepviz.cli:render_cli"
+
+[project.urls]
+Homepage = "https://github.com/gototen/baby-sleep-viz"
+Repository = "https://github.com/gototen/baby-sleep-viz"
+Issues = "https://github.com/gototen/baby-sleep-viz/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]  # Line too long - handled by line-length
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,62 @@
+# Huckleberry App CSV Export Configuration
+# This defines how to parse CSV exports from the Huckleberry baby tracking app.
+
+name: huckleberry
+description: "Huckleberry baby tracking app (iOS/Android)"
+
+# Column mappings - maps internal field names to CSV column names
+columns:
+  type: Type
+  start: Start
+  end: End
+  duration: Duration
+
+# Event type identifiers (values in the 'type' column)
+event_types:
+  sleep: sleep
+  feed: feed
+  meds: meds
+  growth: growth
+  diaper: diaper
+  pumping: pumping
+
+# Medication name is in a non-standard column location
+med_name_column: Start Location
+
+# Known medication types to track individually
+# Other medications will be grouped as "Other"
+medication_types:
+  - Tylenol
+  - Motrin
+  - Pepcid
+  - Gas Relief Drops
+  - Gripe Water
+  - Vitamin D
+  - Probiotics
+
+# Visualization settings
+visualization:
+  # Day boundary (24-hour time, e.g., 7 = 7:00 AM)
+  # A "day" runs from this hour to the same hour next day
+  day_start_hour: 7
+  
+  # Time bucket size in minutes for aggregation
+  bucket_minutes: 5
+  
+  # Colors (hex format)
+  colors:
+    sleep: "#3DD2E6"      # Cyan
+    feed: "#D5622F"       # Orange
+    separator: "#9B59B6"  # Purple
+    work_hours: "#9B59B6" # Purple (semi-transparent)
+    
+    # Medication colors
+    medications:
+      Tylenol: "#FF0080"          # Hot Pink
+      Motrin: "#FF3333"           # Bright Red
+      Pepcid: "#CCFF00"           # Lime
+      Gas Relief Drops: "#9900FF" # Purple
+      Gripe Water: "#FFFF66"      # Bright Yellow
+      Vitamin D: "#FFD700"        # Gold
+      Probiotics: "#FF66B2"       # Light Pink
+      Other: "#FFFFFF"            # White
