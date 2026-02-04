@@ -6,6 +6,8 @@ Visualize baby sleep, feeding, and medication patterns from tracking app exports
 
 Transform your baby tracking app data into beautiful heatmap visualizations that reveal sleep patterns, feeding schedules, and medication timing over weeks or months.
 
+> **📱 As seen on TikTok!** This project was created for an [augmented reality data visualization](https://www.tiktok.com/@anthonygoto/video/7601284812275453215) that went viral. People asked for the code — so here it is!
+
 ![Sample Output](examples/sample_output.png)
 
 ## Features
