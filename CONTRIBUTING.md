@@ -30,27 +30,30 @@ pytest tests/ -v
 
 ### Code Style
 
-We use `ruff` for linting and formatting. Pre-commit hooks handle this automatically, but you can also run manually:
+We use `ruff` for linting and formatting. Use these commands:
 
 ```bash
-# Check for issues
-ruff check src/ tests/
+make fmt      # Auto-fix all linting/formatting issues
+make lint     # Check for issues (no auto-fix)
+make test     # Run tests
+make check    # Run lint + test
+```
 
-# Auto-fix issues
-ruff check --fix src/ tests/
+Or run ruff directly:
 
-# Format code
-ruff format src/ tests/
+```bash
+ruff check --fix src/ tests/    # Auto-fix linting
+ruff format src/ tests/          # Auto-format code
 ```
 
 ### Pre-commit Hooks
 
-If you installed pre-commit hooks (step 4 above), linting runs automatically on every commit. If there are issues, the commit will fail and the files will be auto-fixed — just `git add` and commit again.
+If you installed pre-commit hooks (step 4 above), linting runs automatically on every commit. If there are issues:
+1. The commit will fail
+2. Files are auto-fixed
+3. Just `git add .` and commit again
 
-To run all hooks manually:
-```bash
-pre-commit run --all-files
-```
+**Tip:** If your commit keeps failing, just run `make fmt` to fix everything, then commit.
 
 ## Adding Support for New Baby Tracking Apps
 

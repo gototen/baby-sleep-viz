@@ -226,19 +226,23 @@ Options:
 
 ## Development
 
-### Running tests
+### Setup
 
 ```bash
 pip install -e ".[dev]"
-pytest tests/ -v
+pre-commit install
 ```
 
-### Code style
+### Common Commands
 
 ```bash
-ruff check src/ tests/
-ruff format src/ tests/
+make fmt      # Auto-fix all linting/formatting issues
+make lint     # Check for issues (no auto-fix)
+make test     # Run tests
+make check    # Run lint + test
 ```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## Project Structure
 
